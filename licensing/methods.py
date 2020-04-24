@@ -44,8 +44,8 @@ class Key:
                                                   "MaxOverdraft": max_overdraft,\
                                                   "Sign":"True",\
                                                   "SignMethod":1}))
-        except Exception:
-            return (None, "Could not contact the server.")
+        except Exception as e:
+            return (None, "Could not contact the server." + e)
         
         pubkey = RSAPublicKey.from_string(rsa_pub_key)
     
